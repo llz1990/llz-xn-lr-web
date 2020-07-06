@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="box box-info xn-portal-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">平台新闻</h3>
+        </div>
+        <div class="box-body">
+          <ul>
+            <li *ngFor="let item of news">
+                <span>
+                  <a class="list-item singleline" routerLink="/portal/detail/{{item.id}}"><i>{{item.createTime}}</i>
+                    <span class="leftTitle">{{item.title}}</span>
+                  </a>
+                </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="box box-warning xn-portal-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">平台通知</h3>
+        </div>
+        <div class="box-body">
+          <ul>
+            <li *ngFor="let item of notifies">
+                <span>
+                  <a class="list-item singleline" routerLink="/portal/detail/{{item.id}}"><i>{{item.createTime}}</i>
+                    <span class="leftTitle">{{item.title}}</span>
+                  </a>
+                </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

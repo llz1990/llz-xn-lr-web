@@ -1,0 +1,47 @@
+{
+  "/api": {
+    "target0": "http://dev1.lrscft.com",
+    "target56": "http://dev.lrscft.com",
+    "target123": "http://192.168.1.141:8362",
+    "target1": "http://192.168.1.115:8362",
+    "target99": "http://local201.zdhsoft.com",
+    "target45": "http://test.lrscft.com",
+    "target": "http://localhost:8362",
+    "target9":"http://192.168.1.101:8362/" ,
+    "target2": "http://exp.lrscft.com",
+    "target12": "http://192.168.1.124:8362/",
+     "target315":"http://10.10.10.72:8362",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/avenger": {
+    "target123": "http://192.168.1.141:8360",
+    "target0": "http://dev1.lrscft.com",
+    "target99": "http://local201.zdhsoft.com",
+    "target1": "http://192.168.1.115:8360",
+    "target45": "http://test.lrscft.com",
+    "target56": "http://dev.lrscft.com",
+    "target2": "http://exp.lrscft.com",
+    "target": "http://localhost:8360",
+    "target9":"http://192.168.1.101:8630/" ,
+    "target12": "http://192.168.1.124:8362/",
+    "target315":"http://10.10.10.72:8360",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/dragon": {
+    "target123": "http://192.168.1.141:8366",
+    "target99": "http://local201.zdhsoft.com",
+    "target1": "http://192.168.1.115:8366",
+    "target0": "http://dev1.lrscft.com",
+    "target45": "http://test.lrscft.com",
+    "target56": "http://dev.lrscft.com",
+    "target2": "http://exp.lrscft.com",
+    "target": "http://localhost:8366",
+    "target9":"http://192.168.1.101:8366/" ,
+    "target12": "http://192.168.1.124:8366/",
+    "target315":"http://10.10.10.72:8366",
+   "secure": false,
+    "changeOrigin": true
+  }
+}

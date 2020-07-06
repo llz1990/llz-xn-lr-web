@@ -1,0 +1,82 @@
+<ng-container *ngIf="!!data">
+  <div class="breadcrumb-area">
+    <div class="container">
+      <div class="row">
+        <ol class="breadcrumb mobile-hide">
+          <li><a routerLink="/">首页</a></li>
+          <li *ngFor="let item of data.nav" [ngClass]="navOn(data.nav)">
+            <a routerLink="/portal/column/{{item.id}}">{{item.title}}</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="container min-container">
+    <div class="row">
+      <!-- 左侧 -->
+      <div class="col-sm-3">
+        <div class="left_side mobile-hide">
+          <ul class="nav" id="left_menu">
+            <li class="menu_title" routerLink="/portal/column/{{data.column.id}}">
+              <div class="ib_mid_before"></div>
+              <span>{{data.column.title}}</span>
+            </li>
+            <ng-container *ngIf="!!data.column.children">
+              <li class="menu_lv_1" *ngFor="let child of data.column.children">
+                <a *ngIf="!child.status&&!logining" routerLink="/portal/column/{{child.id}}" class="ib_mid_wrap" [ngClass]="isActive(child)">
+                  <div class="ib_mid_before"></div>
+                  <span class="ib_mid">{{child.title}}</span> <i></i>
+                </a>
+                <a *ngIf="logining" routerLink="/portal/column/{{child.id}}" class="ib_mid_wrap" [ngClass]="isActive(child)">
+                  <div class="ib_mid_before"></div>
+                  <span class="ib_mid">{{child.title}}</span> <i></i>
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 右侧 -->
+      <div class="col-sm-9">
+        <div *ngIf="articleOneOrNot">
+            <div *ngFor="let box of articleArray">
+              <div class="box box-info xn-portal-box" *ngIf="!(directiveNav.indexOf(box.id) !== -1)">
+                <div class="box-header with-border">
+                  <h3 class="box-title">{{box.title}}</h3>
+                </div>
+                <div class="box-body">
+                  <ul>
+                    <li *ngFor="let item of box.rows">
+                        <span>
+                          <a class="list-item singleline" routerLink="/portal/detail/{{item.id}}"><i>{{item.createTime}}</i>
+                            <span class="leftTitle">{{item.title}}</span>
+                          </a>
+                        </span>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="!articleOneOrNot">
+          <div class="box box-info xn-portal-box">
+            <div class="box-header with-border">
+              <h3 class="box-title">{{articleTitle}}</h3>
+            </div>
+            <div class="box-body">
+              <div class="message" [innerHTML]="articleMessage | xnHtml"></div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="articleOneOrNot && articleInNav">
+            <xn-page *ngIf="articleArray.length==1" [total]="total" [size]="pageSize" (change)="onPage($event)"></xn-page>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

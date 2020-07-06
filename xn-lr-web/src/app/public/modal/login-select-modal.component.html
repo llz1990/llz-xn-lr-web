@@ -1,0 +1,10 @@
+<modal #modal [backdrop]="'static'" [keyboard]="false" [animation]="false">
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">请选择要登录的机构</h4>
+  </modal-header>
+  <modal-body>
+    <div class="list-group my-scroll">
+      <a class="list-group-item xn-click-a" *ngFor="let item of items" (click)="onSelect(item.appId, item.orgType)">{{item.orgName}}</a>
+    </div>
+  </modal-body>
+</modal>

@@ -1,0 +1,10 @@
+<!-- 导航 -->
+<ul class="nav-bar clear">
+  <li class="active" (click)="onNavClick(0, $event)">
+    <a routerLink="/">首页</a>
+  </li>
+
+  <li (click)="onNavClick(i+1, $event)" *ngFor="let item of newItems; let i = index">
+    <a routerLink="/portal/column/{{item.id}}">{{item.title}}</a>
+  </li>
+</ul>

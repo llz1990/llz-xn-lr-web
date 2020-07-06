@@ -1,0 +1,27 @@
+<div class="breadcrumb-area">
+  <div class="container">
+    <div class="row">
+      <ol class="breadcrumb mobile-hide">
+        <li><a routerLink="/">首页</a></li>
+        <li>
+          <a routerLink="/portal/enterprise">联盟企业</a>
+        </li>
+        <li *ngIf="article.name">
+          <a routerLink="/portal/enterprise/{{article.id}}">{{article.name}}</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="container min-container">
+  <div class="row center-block">
+    <section>
+      <div class="con-block">
+        <h2 class="title">{{article?.name}}</h2>
+        <div class="con-data"></div>
+        <a href="{{article?.ref}}" target="_blank" class="ref">前往{{article?.name}}官网</a>
+      </div>
+    </section>
+  </div>
+</div>

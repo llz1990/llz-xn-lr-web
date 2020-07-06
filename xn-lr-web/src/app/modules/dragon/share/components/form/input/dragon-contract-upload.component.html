@@ -1,0 +1,37 @@
+<div [formGroup]="form">
+  <div style="padding: 0px 0px;">
+    <dragon-xn-mfile-input [row]='fileUpload[0]' [form]="mainForm"></dragon-xn-mfile-input>
+  </div>
+
+  <table class="table table-bordered text-center" style='float:left'>
+    <thead>
+      <tr class="table-head">
+        <!-- 全选按钮 -->
+        <!-- title -->
+        <th>序号</th>
+        <th>
+          合同扫描件
+        </th>
+        <!-- 行操作 -->
+        <th *ngIf="svrConfig.record.flowId!=='vanke_financing_sign'">操作</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngIf="items.length>0;">
+        <tr *ngFor="let sub of items;let i=index">
+          <ng-container>
+            <td>
+              <span>{{i+1}}</span>
+            </td>
+            <td><a href='javascript:void(0)' (click)="fileView(sub)">
+              {{(sub | xnJson).length>1 ? (sub | xnJson)[0].fileName + '，...' : (sub | xnJson)[0].fileName}}
+              </a>
+            </td>
+            <td *ngIf="svrConfig.record.flowId!=='vanke_financing_sign'"><a href='javascript:void(0)' (click)='changeFile(sub,i+1)'>修改</a> &nbsp;&nbsp;&nbsp;<a href='javascript:void(0)' (click)='deleteFile(items,i)'>删除</a></td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

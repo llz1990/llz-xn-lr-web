@@ -1,0 +1,5 @@
+.nav-bar { flex: 1; vertical-align: middle; margin-top: 15px;}
+.nav-bar li { float: left; margin-right: 55px; }
+.nav-bar li a { font-size: 16px; }
+.nav-bar li:hover a { color: #bd1f2e; padding-bottom: 5px; border-bottom: 2px solid #bd1f2e }
+.nav-bar li.active a { color: #bd1f2e; padding-bottom: 5px; border-bottom: 2px solid #bd1f2e }

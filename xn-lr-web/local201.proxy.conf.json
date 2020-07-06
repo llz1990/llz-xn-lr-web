@@ -1,0 +1,22 @@
+{
+  "/api": {
+    "target56": "http://dev1.lrscft.com",
+    "target3": "http://dev.lrscft.com",
+    "target1": "http://192.168.1.115:8362",
+    "target89": "http://local201.zdhsoft.com",
+    "target2": "http://test.lrscft.com",
+    "target111": "http://localhost:8630",
+    "target":"http://local201.zdhsoft.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/avenger": {
+    "target3": "http://local201.zdhsoft.com",
+    "target1": "http://192.168.1.115:8360",
+    "target2": "http://test.lrscft.com",
+    "target111": "http://localhost:8360",
+    "target": "http://local201.zdhsoft.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

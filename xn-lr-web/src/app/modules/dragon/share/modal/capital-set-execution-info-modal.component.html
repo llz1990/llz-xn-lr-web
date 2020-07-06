@@ -1,0 +1,51 @@
+<modal #modal [backdrop]="'static'" [keyboard]="false" [animation]="false" (onDismiss)="onOk()">
+  <modal-header [show-close]="true" style='text-align:left'>
+    <h4 class="modal-title">
+      设置执行信息
+    </h4>
+  </modal-header>
+  <modal-body>
+    <div style='height:400px;overflow-y: scroll'>
+      <div style="padding: 5px 60px" class="row form-group">
+        <div class="col-sm-1 xn-control-label">
+          执行信息
+        </div>
+        <div class="col-sm-11">
+          <div style="padding: 2px 5px;width: 120px" class="btn btn-default btn-file xn-table-upload block"
+            (click)="addCeil()">
+            <span class="hidden-xs xn-input-font">增加执行</span>
+          </div>
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>项目参与机构</th>
+                <th>执行时间</th>
+                <th>执行内容</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let item of datalist01;let i=index'>
+                <td><a href="javaScript:void(0)" >{{item.appName}}-{{item.orgName}}</a></td>
+                <td>
+                  {{item.executeTime | xnDate:'date'}}
+                </td>
+                <td>
+                  {{item.executeDesc}}
+                </td>
+                <td>
+                  <a href="javaScript:void(0)"
+                    (click)='changeExecution(item,i)'>修改</a>&nbsp;&nbsp;<a
+                    href="javaScript:void(0)" (click)='delete(item.execute_id)'>删除</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" (click)="oncancel()">取消</button>
+    <button type="button" class="btn btn-success" (click)="onOk()">确定</button>
+  </modal-footer>
+</modal>

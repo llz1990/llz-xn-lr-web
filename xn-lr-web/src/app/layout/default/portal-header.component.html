@@ -1,0 +1,21 @@
+<header>
+  <!-- 头部菜单 -->
+  <div class="portal-header inner clear">
+    <div class="logo">
+      <img src="assets/lr/img/logo--50.png">
+    </div>
+    <portal-nav></portal-nav>
+    <div class="login-btn mt14" *ngIf="!logined">
+      <div class="fr">
+        <a class="xn-click-a no-right" (click)="onLogin()">登录</a>
+        <a routerLink="/user/register">注册</a>
+      </div>
+    </div>
+    <div class="login-btn fr" *ngIf="!!logined">
+        <p class="welcome">欢迎您，{{userName}}。</p>
+        <a class="no-right" [routerLink]="factorViewPermission">进入控制台</a>
+        <a class="xn-click-a" (click)="onLogout()">注销</a>
+    </div>
+  </div>
+  <div class="header-hr" [ngClass]="onCssClass()"></div>
+</header>

@@ -1,0 +1,102 @@
+<div class="content">
+  <div class="tc-15-step col4">
+    <ol>
+      <li class="success">
+        <div class="tc-15-step-name"><span class="tc-15-step-num">1</span><span>注册平台账户</span></div>
+        <div class="tc-15-step-arrow"></div>
+      </li>
+      <li class="current">
+        <div class="tc-15-step-name"><span class="tc-15-step-num">2</span><span>设置用户权限</span></div>
+        <div class="tc-15-step-arrow"></div>
+      </li>
+      <li class="disabled">
+        <div class="tc-15-step-name"><span class="tc-15-step-num">3</span><span>等待平台审核</span></div>
+        <div class="tc-15-step-arrow"></div>
+      </li>
+      <li class="disabled">
+        <div class="tc-15-step-name"><span class="tc-15-step-num">4</span><span>完成注册</span></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="content-body">
+    <form class="form-horizontal" (ngSubmit)="onSubmit()" [formGroup]="mainForm" novalidate>
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">设置用户</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="form-group" *ngFor="let row of adminRows">
+            <div class="col-sm-3 xn-control-label">
+              {{row.title}} <span *ngIf="(!row.readonly) && (row.required!==false)" class="required-label">*</span>
+            </div>
+            <div class="col-sm-6">
+              <xn-input [row]="row" [form]="mainForm"></xn-input>
+            </div>
+            <div class="col-sm-3 xn-control-desc">
+              {{row.memo}}
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <div class="box" *ngIf="isShowUser1">
+        <div class="box-header">
+          <h3 class="box-title">请填写经办人员信息</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="form-group" *ngFor="let row of user1Rows">
+            <div class="col-sm-3 xn-control-label">
+              {{row.title}} <span *ngIf="(!row.readonly) && (row.required!==false)" class="required-label">*</span>
+            </div>
+            <div class="col-sm-6">
+              <xn-input [row]="row" [form]="mainForm"></xn-input>
+            </div>
+            <div class="col-sm-3 xn-control-desc">
+              {{row.memo}}
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <div class="box" *ngIf="isShowUser2">
+        <div class="box-header">
+          <h3 class="box-title">请填写复核人员信息</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="form-group" *ngFor="let row of user2Rows">
+            <div class="col-sm-3 xn-control-label">
+              {{row.title}} <span *ngIf="(!row.readonly) && (row.required!==false)" class="required-label">*</span>
+            </div>
+            <div class="col-sm-6">
+              <xn-input [row]="row" [form]="mainForm"></xn-input>
+            </div>
+            <div class="col-sm-3 xn-control-desc">
+              {{row.memo}}
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <div class="row" style="padding-top: 20px">
+        <div class="col-md-4 col-md-offset-2">
+          <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onPrev()">上一步</button>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" [disabled]="!mainForm.valid" class="btn btn-primary btn-lg btn-block">提交注册</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- /.row -->
+
+</div>

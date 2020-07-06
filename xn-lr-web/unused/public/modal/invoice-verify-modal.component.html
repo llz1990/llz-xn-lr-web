@@ -1,0 +1,36 @@
+<modal #modal [backdrop]="'static'" [keyboard]="false" [animation]="false">
+  <modal-header [show-close]="false">
+    <h4 class="modal-title">发票验证</h4>
+  </modal-header>
+  <modal-body>
+    <div class="row form-group">
+      <div class="col-sm-3 xn-control-label invoiceValidatorTitle"></div>
+      <div class="col-sm-3">
+        <input class="form-control .xn-input-border-radius invoiceValidatorInput" type="text" (input)="onInputChange()">
+      </div>
+      <div class="col-sm-6 xn-control-desc invoiceValidatorMemo">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-sm-3 xn-control-label">验证码</div>
+      <div class="col-sm-3">
+        <input class="form-control .xn-input-border-radius invoiceInput" type="text" (input)="onInputChange()">
+      </div>
+      <div class="col-sm-6 xn-control-desc invoiceMemo">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-sm-3 col-sm-offset-3">
+        <img class="invoiceImg" width="120" height="50" (click)="refresh()">
+      </div>
+      <div class="col-sm-6 xn-control-desc">
+        点击图片刷新
+      </div>
+    </div>
+  </modal-body>
+  <modal-footer>
+    <span style="padding-right: 30px; color: #e15f63">{{errorMsg}}</span>
+    <button type="button" class="btn btn-danger" (click)="onOk()" [disabled]="disabled">确定
+    </button>
+  </modal-footer>
+</modal>

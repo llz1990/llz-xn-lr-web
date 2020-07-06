@@ -1,0 +1,30 @@
+<section class="content-header">
+  <h1>
+    {{pageTitle}}
+  </h1>
+</section>
+<section class="content">
+  <div class="box" style="padding-top: 3rem;min-height: 30rem">
+    <div class="box-body" style="width: 50%;margin: auto">
+      <div class="input-group" style="margin-bottom: 50px">
+        <input type="text" class="form-control" placeholder="请输入..." [(ngModel)]="inputValue">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" (click)="searchResult(inputValue)">搜索</button>
+        </span>
+      </div>
+      <div *ngIf="!!mainForm">
+        <div class="form-group clearfix" *ngFor="let row of shows">
+          <div style="padding-top: 7px" class=" col-sm-3" [ngClass]="{ 'required-star': row.required }">
+            {{row.title}}
+          </div>
+          <div class="col-sm-9">
+            <xn-input [row]="row" [form]="mainForm"></xn-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box-footer text-right" style="width: 50%;margin: auto" *ngIf="!!mainForm">
+      <button type="button" class="btn btn-success" (click)="save()">保存</button>
+    </div>
+  </div>
+</section>

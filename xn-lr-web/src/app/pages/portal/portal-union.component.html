@@ -1,0 +1,25 @@
+<div class="union inner">
+  <div class="space-title">
+    <h2 class="title">
+      <span class="in-title">联盟企业</span>
+    </h2>
+  </div>
+  <div class="relative">
+    <div class="union-ul clear unionLogo">
+      <div class="relative">
+        <div class="swiper-container" (mouseover)=stopPlay() (mouseleave)="goPlay()">
+          <div class="swiper-wrapper" >
+            <div *ngFor="let item of items" class="swiper-slide">
+                <a routerLink="/portal/enterprise/{{item.id}}">
+                <img src="{{ item.logo }}" class="logo-img">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-next slick-arrow" (mouseover)=stopPlay() (mouseleave)="goPlay()"></div>
+        <div class="swiper-button-prev slick-arrow" (mouseover)=stopPlay() (mouseleave)="goPlay()"></div>
+        </div>
+      </div>
+    </div>
+  </div>

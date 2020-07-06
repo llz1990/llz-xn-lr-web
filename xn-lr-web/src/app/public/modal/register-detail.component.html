@@ -1,0 +1,244 @@
+<section class="content-header">
+  <h1>
+    {{pageTitle}}
+    <small>{{pageDesc}}</small>
+  </h1>
+</section>
+
+<section class="content">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">{{tableTitle}}</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr *ngIf="data.appId">
+          <td class="col-sm-3">企业ID</td>
+          <td>{{data.appId}}</td>
+        </tr>
+        <tr *ngIf="data.appName">
+          <td>企业名称</td>
+          <td>{{data.appName}}</td>
+        </tr>
+        <tr *ngIf="data.orgType">
+          <td>企业类型</td>
+          <td>{{data.orgType | xnSelectTransform : orgTypeLists}}</td>
+        </tr>
+        <tr *ngIf="data.orgCodeType">
+          <td>{{data.orgCodeType}}</td>
+          <td>{{data.orgCodeNo}}</td>
+        </tr>
+        <tr *ngIf="data.orgCodeType === '营业执照号'">
+          <td>组织机构代码</td>
+          <td>{{extendInfo.orgCodeNo2}}</td>
+        </tr>
+        <tr *ngIf="data.orgCodeType === '营业执照号'">
+          <td>纳税人识别号</td>
+          <td>{{extendInfo.orgTaxpayerId}}</td>
+        </tr>
+        <tr *ngIf="data.orgLegalPerson">
+          <td>法人代表姓名</td>
+          <td>{{data.orgLegalPerson}}</td>
+        </tr>
+        <tr *ngIf="data.orgRegisterAddress">
+          <td>注册地址</td>
+          <td>{{data.orgRegisterAddress}}</td>
+        </tr>
+        <tr *ngIf="data.orgAddress">
+          <td>联系地址</td>
+          <td>{{data.orgAddress}}</td>
+        </tr>
+        <tr *ngIf="extendInfo.orgPostCode">
+          <td>邮政编码</td>
+          <td>{{extendInfo.orgPostCode}}</td>
+        </tr>
+        <tr *ngIf="data.createTime">
+          <td>创建时间</td>
+          <td>{{data.createTime | xnDate:'datetime'}}</td>
+        </tr>
+        <tr *ngIf="data.status">
+          <td>注册状态</td>
+          <td>{{data.status | xnSelectTransform : registerStatusLists}}</td>
+        </tr>
+        <tr *ngIf="data.contractCount">
+          <td>今日合同数量</td>
+          <td>{{data.contractCount}}</td>
+        </tr>
+        <tr ng-if="data.contractTime">
+          <td>最后生产合同时间</td>
+          <td>{{data.contractTime | xnDate:'datetime'}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- /.box-body -->
+  </div>
+
+  <div class="box" *ngIf="extendInfo.adminName">
+    <div class="box-header">
+      <h3 class="box-title">{{adminTitle}}</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+          <td class="col-sm-3">姓名</td>
+          <td>{{extendInfo.adminName}}</td>
+        </tr>
+        <tr>
+          <td>手机号</td>
+          <td>{{extendInfo.adminMobile}}</td>
+        </tr>
+        <tr>
+          <td>证件类型</td>
+          <td>{{extendInfo.adminCardType}}</td>
+        </tr>
+        <tr>
+          <td>证件号码</td>
+          <td>{{extendInfo.adminCardNo}}</td>
+        </tr>
+        <tr>
+          <td>电子邮箱</td>
+          <td>{{extendInfo.adminEmail}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- /.box-body -->
+  </div>
+
+  <div class="box" *ngIf="extendInfo.certUserName">
+    <div class="box-header">
+      <h3 class="box-title">{{certTitle}}</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+          <td class="col-sm-3">姓名</td>
+          <td>{{extendInfo.certUserName}}</td>
+        </tr>
+        <tr>
+          <td>手机号</td>
+          <td>{{extendInfo.certUserMobile}}</td>
+        </tr>
+        <tr>
+          <td>证件类型</td>
+          <td>{{extendInfo.certUserCardType}}</td>
+        </tr>
+        <tr>
+          <td>证件号码</td>
+          <td>{{extendInfo.certUserCardNo}}</td>
+        </tr>
+        <tr>
+          <td>电子邮箱</td>
+          <td>{{extendInfo.certUserEmail}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!--重要通知消息-->
+  <div class="box" *ngIf="extendInfo.notifierName">
+    <div class="box-header">
+      <h3 class="box-title">{{notifier}}</h3>
+      <!--<a *ngIf="isAdministrator" class="xn-click-a btn btn-primary btn-right" (click)="onViewEdit(notifierData)">修改</a>-->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+          <td class="col-sm-3">姓名</td>
+          <td>{{extendInfo.notifierName}}</td>
+        </tr>
+        <tr>
+          <td>手机号</td>
+          <td>{{extendInfo.notifierMobile}}</td>
+        </tr>
+        <tr>
+          <td>证件类型</td>
+          <td>{{extendInfo.notifierCardType}}</td>
+        </tr>
+        <tr>
+          <td>证件号码</td>
+          <td>{{extendInfo.notifierCardNo}}</td>
+        </tr>
+        <tr>
+          <td>电子邮箱</td>
+          <td>{{extendInfo.notifierEmail}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!--用户-->
+  <div class="box" *ngFor="let item of items; let i = index">
+    <div class="box-header">
+      <h3 class="box-title">{{userTitle}}{{i+1}}</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+          <td class="col-sm-3">用户姓名</td>
+          <td>{{item.userName}}</td>
+        </tr>
+        <tr>
+          <td class="col-sm-3">用户ID</td>
+          <td>{{item.userId}}</td>
+        </tr>
+        <tr>
+          <td>手机号</td>
+          <td>{{item.mobile}}</td>
+        </tr>
+        <tr>
+          <td>证件类型</td>
+          <td>{{item.cardType}}</td>
+        </tr>
+        <tr>
+          <td>证件号码</td>
+          <td>{{item.cardNo}}</td>
+        </tr>
+        <tr>
+          <td>电子邮箱</td>
+          <td>{{item.email}}</td>
+        </tr>
+        <tr>
+          <td>用户角色</td>
+          <td>
+            <ul class="user-role">
+              <li *ngFor="let role of item.userRoleList" style="list-style:none">
+                {{role.roleName}}
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <!--返回-->
+  <div class="form-group text-right">
+    <button class="btn btn-primary" (click)="goBack()">返回</button>
+  </div>
+</section>
+
+

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "plugins/bootstrap/css/bootstrap.min.css"; */
+/* @import "../node_modules/font-awesome/css/font-awesome.min.css"; */
+/* @import "../node_modules/ionicons/dist/css/ionicons.min.css"; */
+@import "plugins/datatables-1.10.15/media/css/dataTables.bootstrap.css";
+@import "plugins/datatables-buttons-1.3.1/css/buttons.bootstrap.min.css";
+@import "plugins/datatables-select-1.2.2/css/select.bootstrap.min.css";
+@import "plugins/xiangna/css/editor.xiangna.css";
+@import "plugins/datepicker/datepicker3.css";
+/* @import "plugins/admin-lte/dist/css/AdminLTE.css"; */
+@import "plugins/admin-lte/dist/css/skins/_all-skins.min.css";
+@import "plugins/xiangna/css/xiangna.css";
+@import "plugins/daterangepicker/daterangepicker.css";
+@import "plugins/swiper/swiper-3.4.2.min.css";
+@import "app/public/xn-form.css";

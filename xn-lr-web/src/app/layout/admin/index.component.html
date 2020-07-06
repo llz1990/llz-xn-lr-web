@@ -1,0 +1,11 @@
+<console-header></console-header>
+
+<div class="xn-content-wrapper">
+  <console-aside></console-aside>
+  <div class="xn-content-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!--平台，保理商 查询浮窗-->
+<xn-query-corporate-details-component
+  *ngIf="xn.user.orgType === 99 || xn.user.orgType === 3"></xn-query-corporate-details-component>

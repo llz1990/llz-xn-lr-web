@@ -1,0 +1,91 @@
+<div>
+  <p style='width: 50%;'>原收款信息:</p>
+  <table class="table-hover table table-bordered file-row-table" style="border:0;cellspacing:0;cellpadding:0">
+    <tr>
+      <th style="width: 20%">收款单位户名
+      <td>{{datavalue?.old.receiveOrg}}</td>
+    </tr>
+    <tr>
+      <th>收款单位账号</th>
+      <td>{{datavalue?.old.receiveAccount}}</td>
+    </tr>
+    <tr>
+      <th>收款单位开户行</th>
+      <td>{{datavalue?.old.receiveBank}}</td>
+    </tr>
+    <!-- <tr>
+      <th>收款单位开户行行号</th>
+      <td>{{datavalue?.old.receiveBankNo}}</td>
+    </tr> -->
+    <tr>
+      <th>变更原因</th>
+      <td>
+        <select class="form-control xn-input-font" [value]='datavalue?.changeReason' (blur)="onBlur()"
+          (change)="inputChange($event)">
+          <option value="">请选择</option>
+          <option *ngFor="let option of selectOptions" value="{{option.value}}">{{option.label}}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <div style='display:inline-flex'>
+    <p style='width: 50%;'>新收款信息:</p>
+    <div style="padding: 2px 5px;float:left;width: 120px" class="btn btn-default btn-file xn-table-upload block"
+      (click)="handleAdd()">
+      <span class="hidden-xs xn-input-font">选择</span>
+    </div>
+  </div>
+  <div class="xn-input-alert" *ngIf='alert1'>{{alert1}}</div>
+  <table class="table table-bordered text-center" style='margin-top:20px'>
+    <!-- <tr *ngIf="datavalue.changeReason==='1' || datavalue.changeReason==='4' ">
+      <th style="width:20%" class='required-star'>收款单位户名</th>
+      <td><input #input class="form-control xn-input-font xn-input-border-radius" [(ngModel)]="datavalue.new.receiveOrg"
+          type="text" (blur)='onBlur()'>
+      </td>
+    </tr>
+    <tr *ngIf="datavalue.changeReason==='3' || datavalue.changeReason==='4' ||datavalue.changeReason==='0'">
+      <th style="width:20%" class='required-star'>收款单位账号</th>
+      <td><input #input class="form-control xn-input-font xn-input-border-radius"
+          [(ngModel)]="datavalue.new.receiveAccount" type="text" (blur)='onBlur()'></td>
+    </tr>
+    <tr *ngIf="datavalue.changeReason==='2' ||  datavalue.changeReason==='4' ||datavalue.changeReason==='0'">
+      <th style="width:20%" class='required-star'>收款单位开户行</th>
+      <td><input #input class="form-control xn-input-font xn-input-border-radius"
+          [(ngModel)]="datavalue.new.receiveBank" type="text" (blur)='onBlur()'></td>
+    </tr>
+    <tr
+     // *ngIf="datavalue.changeReason==='2' ||datavalue.changeReason==='3' ||  datavalue.changeReason==='4' ||datavalue.changeReason==='0' ||datavalue.changeReason==='1'">
+      <th style="width:20%" class='required-star'>收款单位开户行行号</th>
+      <td><input #input class="form-control xn-input-font xn-input-border-radius"
+          [(ngModel)]="datavalue.new.receiveBankNo" type="text" (blur)='onBlur()'></td>
+    </tr> -->
+    <tbody>
+      <tr>
+        <td style='width:20%'>
+          收款单位户名
+        </td>
+        <td>
+          {{datavalue?.new.receiveOrg}}
+          <!-- <input class="form-control xn-input-font xn-input-border-radius" readonly type="text" [value]='items.accountName'  (blur)="onBlur()" (change)="inputChange($event,'accountName')"/> -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          收款单位账号
+        </td>
+        <td>
+          {{datavalue?.new.receiveAccount}}
+          <!-- <input class="form-control xn-input-font xn-input-border-radius" readonly type="text" [value]='items.cardCode'  (blur)="onBlur()" (change)="inputChange($event,'cardCode')"/> -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          收款单位开户行
+        </td>
+        <td>
+          {{datavalue?.new.receiveBank}}
+          <!-- <input class="form-control xn-input-font xn-input-border-radius" readonly type="text" [value]='items.bankName'  (blur)="onBlur()" (change)="inputChange($event,'bankName')"/> -->
+        </td>
+      </tr>
+  </table>
+</div>

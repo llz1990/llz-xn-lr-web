@@ -1,0 +1,11 @@
+.union .space-title{ padding-top: 0; padding-bottom: 50px }
+.union-ul { margin-bottom: 50px; }
+.union-ul li {  width: 166px; height: 62px; border: 1px solid #eee;  margin-right: 40px; float: left; margin-bottom: 10px}
+.union-ul li:nth-child(6n) { margin-right: 0px }
+.relative { position: relative }
+.slick-arrow { top: 50%; transform: translateY(-50%); width: 49px; height: 49px; margin-top: -25px;}
+.swiper-button-prev { background: url(../../../assets/lr/img/arrow_btn_l.png) no-repeat center center / 100% auto; left: -55px;}
+.swiper-button-next { background: url(../../../assets/lr/img/arrow_btn_r.png) no-repeat center center / 100% auto; right: -55px;}
+.swiper-pagination { width: 100%; }
+.swiper-container { padding-bottom: 50px; }
+.logo-img { border: 1px solid #ccc; }

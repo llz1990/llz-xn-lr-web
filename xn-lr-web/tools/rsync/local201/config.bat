@@ -1,0 +1,9 @@
+rem 一些环境的设置
+SET ENVNAME=local201
+SET RHOST=192.168.1.201
+SET RPORT=22
+SET RUSER=ubuntu
+SET RPWD=111111
+SET RPKEY=../key/testubuntu.txt
+SET RDEST=/data/xn-lr-web-local201
+SET PM2=local201.pm2.json

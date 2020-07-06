@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "memo": "这是接入的是投产环境",
+    "target": "https://www.lrscft.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

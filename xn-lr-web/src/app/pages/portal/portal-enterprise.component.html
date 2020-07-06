@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="box box-info xn-portal-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">联盟企业</h3>
+          <a class="list-item fr" routerLink="/portal/enterprise">
+            <span class="leftTitle">查看更多</span>
+          </a>
+        </div>
+        <div class="box-body">
+          <ul class="col-sm-12">
+            <li *ngFor="let item of enterprises1" class="col-sm-6">
+                <span>
+                  <a class="list-item singleline" routerLink="/portal/enterprise/{{item.id}}">
+                    <span class="leftTitle">{{item.name}}</span>
+                  </a>
+                </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

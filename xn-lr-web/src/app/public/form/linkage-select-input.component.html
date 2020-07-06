@@ -1,0 +1,17 @@
+<div class="row" [formGroup]="form">
+  <div class="col-md-6 xn-dselect-first">
+    <select class="form-control xn-input-font" [value]="proxyValue" [ngClass]="proxyClass" (blur)="proxyBlur($event)"
+            (change)="proxyChange($event)">
+      <option value="">-请选择-</option>
+      <option *ngFor="let option of row.selectOptions" value="{{option.value}}">{{option.label}}</option>
+    </select>
+  </div>
+
+  <div class="col-md-6 xn-dselect-second">
+    <select class="form-control xn-input-font" *ngIf="secondOptions.length>0" [value]="statusValue" [ngClass]="statusClass" (blur)="statusBlur($event)" (change)="statusChange($event)">
+      <option value="">-请选择-</option>
+      <option *ngFor="let option of secondOptions" value="{{option.value}}">{{option.label}}</option>
+    </select>
+  </div>
+</div>
+<span class="xn-input-alert">{{alert}}</span>

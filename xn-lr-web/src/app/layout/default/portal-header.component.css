@@ -1,0 +1,17 @@
+
+header {margin-top: 10px;}
+.header-container {padding-left: 50px; padding-right: 50px;}
+.inline-block {display: inline-block}
+.login-div {padding-top: 20px;}
+
+.portal-header { padding: 37px 0px 26px; display: flex; }
+.logo { display: inline-block; width: 320px;}
+
+.login-btn { vertical-align: middle; width: 180px; overflow: hidden; }
+.mt14 { margin-top: 14px }
+.login-btn a { float: left; margin: 0; padding: 2px 18px; font-size: 12px; border: 1px solid #bd1f2e; }
+
+.welcome { padding-bottom: 5px; text-align: left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.no-right { border-right: 0 !important; }
+
+.header-hr.active { height: 5px; background-color: #bd1f2e; }

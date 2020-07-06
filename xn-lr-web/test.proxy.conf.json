@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "http://test.lrscft.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/avenger": {
+    "target": "http://test.lrscft.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

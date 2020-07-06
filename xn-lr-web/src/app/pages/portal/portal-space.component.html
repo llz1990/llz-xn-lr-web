@@ -1,0 +1,51 @@
+
+
+
+<!-- 链融空间 -->
+<div class="space">
+  <div class="space-title">
+    <h2 class="title">
+      <span class="in-title">链融空间</span>
+    </h2>
+  </div>
+  <!-- 公司动态 -->
+  <div class="space-box no-top">
+    <div class="inner">
+      <h2 class="space-subtitle">公司动态
+        <a class="space-view" href="javaScript:void (0)" (click)="viewMore()">更多...</a>
+      </h2>
+      <ul class="space-ul clear">
+        <li *ngFor="let item of news">
+          <a routerLink="/portal/detail/{{item.id}}">
+            <div class="space-img">
+              <img src="/api/attachment/view?key={{item.fileId}}" *ngIf="item && item.fileId">
+            </div>
+            <div class="space-msg">
+              <p class="space-inmsg">{{item.title}}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 行业资讯 -->
+  <!-- <div class="space-box bg-fff">
+    <div class="inner">
+      <h2 class="space-subtitle">行业资讯</h2>
+      <ul class="space-ul clear">
+        <li *ngFor="let item of notifies">
+          <a routerLink="/portal/detail/{{item.id}}">
+            <div class="space-img">
+              <img src="/api/attachment/view?key={{item.fileId}}" *ngIf="item && item.fileId">
+            </div>
+            <div class="space-msg">
+              <p class="space-inmsg">{{item.title}}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+
+</div>

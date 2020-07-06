@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>链融科技供应链服务平台</title>
+  <base href="/">
+
+  <meta name="description" content="深圳市链融科技股份有限公司是专业从事商业信用生态建设的创新型企业，依托业内顶尖的金融、科技、供应链管理、运行和风控团队以及专业学术顾问，运用大数据、云计算、区块链以及人工智能等最新的互联网技术，创新推出“链融科技供应链服务平台（https://www.lrscft.com)（以下简称“平台”）。平台汇聚了商品交易商（行业龙头生产企业、供应链企业及其上下游企业）、金融服务商（银行、保险、基金）等各参与方，致力于提供合规、安全、便利、共赢的供应链金融服务，为商品交易商寻资金、为金融服务商找资产、为链上企业控风险、为上下游客户降成本。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+    }
+
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+
+  </style>
+  <script>
+    function detectIE() {
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf('MSIE ');
+
+      if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+      }
+
+      var trident = ua.indexOf('Trident/');
+      if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+      }
+
+      var edge = ua.indexOf('Edge/');
+      if (edge > 0) {
+        // Edge (IE 12+) => return version number
+        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+      }
+
+      // other browser
+      return false;
+    }
+
+    var version = detectIE();
+
+    if (version && version < 10) {
+      window.location.href = '/assets/unsupported-browser.html';
+    }
+
+  </script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <app-root>
+    <div class="app-loading">
+      加载中……
+      <!-- <div class="logo"></div>
+      <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg> -->
+    </div>
+  </app-root>
+</body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.8.5/echarts.min.js"></script>
+
+</html>

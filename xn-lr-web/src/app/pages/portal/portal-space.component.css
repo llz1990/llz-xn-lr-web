@@ -1,0 +1,111 @@
+.space {
+  margin-bottom: 30px;
+  background: #f6f4f3
+}
+
+.space-box {
+  padding-top: 25px;
+}
+
+.space-title {
+  padding: 95px 0px 25px;
+}
+
+.space-subtitle {
+  position: relative;
+  font-size: 24px;
+  color: #bd1f2e;
+  margin-bottom: 7px;
+}
+
+.space-view {
+  position: absolute;
+  font-size: 12px;
+  color: #0d6aad;
+  right: 0;
+  bottom: 0;
+  opacity: .5;
+}
+
+.space-view:hover {
+  opacity: 1;
+}
+
+.space-subtitle:before {
+  position: absolute;
+  content: '';
+  width: 72px;
+  height: 23px;
+  left: -80px;
+  top: 3px;
+  background: url(../../../assets/lr/img/icon02.png) no-repeat 0 0 / 100% auto;
+}
+
+.space-ul {
+  height: 273px
+}
+
+.space-ul li {
+  position: relative;
+  float: left;
+  width: 396px;
+  height: 273px;
+  margin-right: 6px;
+  overflow: hidden;
+}
+
+.space-ul li:last-child {
+  margin-right: 0;
+}
+
+.space-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(../../../assets/lr/img/bg-logo.jpg) no-repeat 0 0 / 100% auto;
+}
+
+.space-img img {
+  width: 100%;
+  height: auto;
+}
+
+.space-msg {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4)
+}
+
+.space-inmsg {
+  height: 55px;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.activity {
+  height: 274px;
+  overflow: hidden;
+}
+
+.video {
+  height: 505px;
+  overflow: hidden
+}
+
+.bg-fff {
+  background: #fff
+}
+
+.no-top {
+  padding-top: 0px
+}

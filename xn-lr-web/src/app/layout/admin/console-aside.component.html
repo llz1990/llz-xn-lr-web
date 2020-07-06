@@ -1,0 +1,93 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="header">导航</li>
+      <!-- 首页 -->
+      <li [ngClass]="homeCss" *ngIf="showMenu && showTodo && showType && factorViewPermission">
+        <a routerLink="/console" routerLinkActive="active">
+          <i class="fa fa-home"></i>
+          <span>首页</span>
+          <span class="pull-right-container" *ngIf="!!todoCount">
+            <span class="label label-primary pull-right">{{todoCount}}</span>
+          </span>
+        </a>
+      </li>
+      <li class="active" *ngIf="!!showRegister">
+        <a routerLink="/user/register" routerLinkActive="active">
+          <i class="fa fa-handshake-o"></i>
+          <span>注册平台账户</span>
+        </a>
+      </li>
+      <li class="active" *ngIf="!!showProcess">
+        <a routerLink="/user/home" routerLinkActive="active">
+          <i class="fa fa-spinner"></i>
+          <span>查询注册进度</span>
+        </a>
+      </li>
+      <!-- 目前支持三级导航 -->
+      <ng-container *ngIf="showMenu">
+        <!-- 一级菜单 -->
+        <li class="treeview" [ngClass]="menu.treeCss" *ngFor="let menu of menus">
+          <a href="#">
+            <i class="fa" [ngClass]="menu.css"></i><span>{{menu.label}}</span>
+            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <!-- 二级菜单 -->
+            <li class="treeview" [ngClass]="child.treeCss" *ngFor="let child of menu.children">
+              <!-- 如果没有子项 -->
+              <ng-container *ngIf="child.children.length === 0">
+                <a routerLinkActive="active" routerLink="{{child.url}}"><i class="fa fa-circle-o"></i>
+                  {{child.label}}</a>
+              </ng-container>
+              <!-- 有子项 -->
+              <ng-container *ngIf="child.children.length > 0">
+                <a href="#">
+                  <i class="fa fa-circle-o"></i><span> {{child.label}}</span> <i
+                  class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <!-- 三级菜单 -->
+                  <li class="treeview" [ngClass]="chil.treeCss" *ngFor="let chil of child.children">
+                    <!-- 默认没有子项 -->
+                    <a routerLink="{{chil.url}}"><i class="fa fa-circle-o"></i>{{chil.label}}</a>
+                  </li>
+                </ul>
+              </ng-container>
+            </li>
+          </ul>
+        </li>
+        <!-- 我的工具 -->
+        <li class="treeview" *ngIf="showType && factorViewPermission" [ngClass]="isExpendToolMenu()">
+          <a href="#">
+            <i class="fa" [ngClass]="toolsMenu.css"></i>
+            <span>{{toolsMenu.label}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li *ngFor="let child of toolsMenu.children" [ngClass]="{'active': currentUrl === child.url}">
+              <ng-container *ngIf="child?.notarget">
+                <a routerLinkActive="active" routerLink="{{child.url}}">
+                  <i class="fa fa-circle-o"></i> {{child.label}}</a>
+              </ng-container>
+              <a *ngIf="!child?.notarget" href="{{child.url}}" target="_blank">
+                <i class="fa fa-circle-o"></i> {{child.label}}</a>
+            </li>
+          </ul>
+        </li>
+
+      </ng-container>
+      <li [ngClass]="publishCss" *ngIf="xn.user.orgType===1">
+        <a routerLinkActive="active" routerLink="/console/bank-puhuitong/bank-extension">
+          <i class="fa fa-minus-square"></i>
+          <span>推广列表</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

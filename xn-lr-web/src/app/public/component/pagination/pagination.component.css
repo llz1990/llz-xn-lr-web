@@ -1,0 +1,21 @@
+ul {
+  padding-top: .5em;
+}
+
+.total-info {
+  padding: .5em;
+}
+
+.dropdown {
+  margin: 0 .4em;
+  padding: .3em;
+  height: 29px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.jumper input {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+}

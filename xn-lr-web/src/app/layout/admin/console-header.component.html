@@ -1,0 +1,80 @@
+<header class="main-header">
+  <!-- Logo -->
+  <a routerLinkActive="active" routerLink="/" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini">链融</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">
+      <img src="assets/lr/img/logo-50.png" class="logo" style="width: auto">
+    </span>
+  </a>
+
+  <!-- 导航 -->
+  <nav class="navbar navbar-lr menu">
+    <!-- Sidebar toggle button-->
+    <a class="sidebar-toggle xn-click-a" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+
+    <div class="console-header-container">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <ng-container *ngFor="let item of items">
+            <li class="dropdown" *ngIf="!!item.children">
+              <a routerLink="/portal/column/{{item.id}}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                aria-haspopup="true" aria-expanded="false">{{item.title}} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li *ngFor="let child of item.children"><a routerLink="/portal/column/{{child.id}}">{{child.title}}</a>
+                </li>
+              </ul>
+            </li>
+            <li *ngIf="!item.children"><a routerLink="/portal/column/{{item.id}}">{{item.title}}</a></li>
+          </ng-container>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu" *ngIf="!!logined">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="assets/admin-lte/img/avatar0.png" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{userName}} ({{orgName}})</span>
+          </a>
+          <ul class="dropdown-menu" style="margin-top: 1px;">
+            <!-- User image -->
+            <li class="user-header" style="height:fit-content">
+              <img src="assets/admin-lte/img/avatar0.png" class="img-circle" alt="User Image">
+              <p>
+                欢迎您，{{userName}}
+                <small>{{orgName}}</small>
+                <small><span *ngFor="let item of rolesCn">{{item}}</span></small>
+              </p>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <ng-container *ngIf="currentLoginedType!==99">
+                <div class="pull-left">
+                  <a routerLink="/console/record/info" class="btn btn-default btn-flat">我的资料</a>
+                </div>
+              </ng-container>
+              <div class="pull-right">
+                <a (click)="onLogout()" class="btn btn-default btn-flat">注销</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li *ngIf="!logined">
+          <a (click)="onLogin()" class="console-header-login-btn xn-click-a" style="min-width: 0">登录</a>
+        </li>
+        <li *ngIf="!logined">
+          <a routerLink="/user/register" class="console-header-login-btn xn-click-a" style="min-width: 0">注册</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!--<login-modal #loginModal></login-modal>-->

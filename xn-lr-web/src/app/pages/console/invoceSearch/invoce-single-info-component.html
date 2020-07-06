@@ -1,0 +1,102 @@
+<section class="content-header">
+  <span>
+    批量查询记录详情
+  </span>
+</section>
+<section class="content">
+  <!--企业资料-->
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">{{tableTitle}}</h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+          <td class="col-sm-3" style="width:150px">记录编号</td>
+          <td>{{record_id}}</td>
+        </tr>
+        <tr>
+          <td>查询开始时间</td>
+          <td>{{items.start_time}}</td>
+        </tr>
+        <tr>
+          <td>查询结束时间</td>
+          <td>{{items.end_time}}</td>
+        </tr>
+        <tr>
+          <td>当前状态</td>
+          <td>{{items.status_name}}</td>
+        </tr>
+        <tr>
+          <td>查询成功企业数量</td>
+          <td>{{items.success_num}}</td>
+        </tr>
+        <tr>
+          <td>查询异常企业数量</td>
+          <td>{{items.fail_num}}</td>
+        </tr>
+        <tr>
+          <td>详细记录</td>
+          <td>
+            <table class="table table-bordered table-striped text-center">
+              <thead>
+              <tr>
+                <th>序号</th>
+                <th>企业名称</th>
+                <th>查询开始时间</th>
+                <th>查询结束时间</th>
+                <th>查询进度</th>
+                <th>查询结果</th>
+              </tr>
+              </thead>
+              <tbody>
+              <ng-container *ngIf="detailRecord.length > 0;else block">
+                <tr *ngFor="let item of detailRecord; ">
+                  <td>{{item.id}}</td>
+                  <td>
+                    <div style="width: 80px;word-break: break-all;word-wrap: break-word" [innerHTML]="item.name"
+                         class="intext"></div>
+                  </td>
+                  <td>
+                    <div [innerHTML]="item.start_time" class="intext"></div>
+                  </td>
+                  <td>
+                    {{item.end_time}}
+                  </td>
+                  <td>
+                    <div [innerHTML]="item.status_name" class="intext"></div>
+                  </td>
+                  <td>
+                    <div class="intext">{{item.query_result}}</div>
+                  </td>
+                </tr>
+
+              </ng-container>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #block>
+        <tr>
+          <td [attr.colspan]="6">
+            <div style="padding: 3rem;text-align: center;color: #c5c5c5;background-color: #fdfdfd">暂无数据！</div>
+          </td>
+        </tr>
+      </ng-template>
+      <xn-pagination [rows]="pageSize" [first]="first" [totalRecords]="total" [pageSizeOptions]="[10,20,30,50,100]"
+                     (pageChange)="onPage($event)"></xn-pagination>
+      <div class='frdiv'>
+        <span class="fr">
+          <a class="btn btn-default" (click)="onCancel()">取消</a>
+          <a class="btn btn-info" (click)="onload_invoice()" #invoiceRecord>下载详细记录</a>
+        </span>
+      </div>
+      <div class="box-footer pull-left">
+        <button type="button" class="btn btn-default pull-right" (click)="onCancel()">返回</button>
+      </div>
+    </div>
+  </div>
+</section>
