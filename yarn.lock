@@ -448,10 +448,10 @@ angular-router-loader@0.8.0:
   dependencies:
     loader-utils "^1.0.2"
 
-angular-sortablejs@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/angular-sortablejs/-/angular-sortablejs-2.1.0.tgz#d4e50ba1730559c26924f6f8dc769e09f9de78fa"
-  integrity sha512-8+K/rWWj/MKLW9qmFeumNwy6+N8FRp3fQIPZPtDwhflde97mmXcjjlI+EgXtNj7dKlsr4BWMmmMk8gbpH6hmyg==
+angular-sortablejs@^2.1.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/angular-sortablejs/-/angular-sortablejs-2.7.0.tgz#cd028e52125f0cb44a37a3aefb7e2d6e145c0503"
+  integrity sha512-pFnRAZmIDUROTCr1V17DCc7iwrdDYqVIkQmOf+pIl7OZCXo7fqCVZYL4sluFmh81SpM45P/aohbC5Zb6ECp4/A==
 
 angular2-template-loader@^0.6.2:
   version "0.6.2"
@@ -7625,10 +7625,10 @@ sort-keys@^2.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.9.0:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
-  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
+sortablejs@^1.10.2:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.13.0.tgz#3ab2473f8c69ca63569e80b1cd1b5669b51269e9"
+  integrity sha512-RBJirPY0spWCrU5yCmWM1eFs/XgX2J5c6b275/YyxFRgnzPhKl/TDeU2hNR8Dt7ITq66NRPM4UlOt+e5O4CFHg==
 
 source-list-map@^2.0.0:
   version "2.0.1"
@@ -8956,9 +8956,9 @@ xxhashjs@^0.2.1:
     cuint "^0.2.2"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 y18n@^4.0.0:
   version "4.0.0"
