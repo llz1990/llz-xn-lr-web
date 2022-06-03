@@ -136,12 +136,12 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.1.0":
-  version "5.2.11"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.11.tgz#0e38fdf4fa038a3c168c72952682f2ee3721f1a3"
-  integrity sha512-h2vpvXNAdOqKzbVaZcHnHGMT5A8uDnizk6FgGq6SPyw9s3d+/VxZ9LJaPjUk3g2lICA7og1tUel+2YfF971MlQ==
+"@angular/core@^11.0.5":
+  version "11.0.5"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-11.0.5.tgz#b8c448c3cd4f6dae7327cc1ba4ee2aa29c8dbc26"
+  integrity sha512-XAXWQi7R3ucZXQwx9QK5jSKJeQyRJ53u2dQDpr7R5stzeCy1a5hrNOkZLg9zOTTPcth/6+FrOrRZP9SMdxtw3w==
   dependencies:
-    tslib "^1.7.1"
+    tslib "^2.0.0"
 
 "@angular/forms@^5.1.0":
   version "5.2.11"
@@ -448,10 +448,10 @@ angular-router-loader@0.8.0:
   dependencies:
     loader-utils "^1.0.2"
 
-angular-sortablejs@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/angular-sortablejs/-/angular-sortablejs-2.1.0.tgz#d4e50ba1730559c26924f6f8dc769e09f9de78fa"
-  integrity sha512-8+K/rWWj/MKLW9qmFeumNwy6+N8FRp3fQIPZPtDwhflde97mmXcjjlI+EgXtNj7dKlsr4BWMmmMk8gbpH6hmyg==
+angular-sortablejs@^2.1.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/angular-sortablejs/-/angular-sortablejs-2.7.0.tgz#cd028e52125f0cb44a37a3aefb7e2d6e145c0503"
+  integrity sha512-pFnRAZmIDUROTCr1V17DCc7iwrdDYqVIkQmOf+pIl7OZCXo7fqCVZYL4sluFmh81SpM45P/aohbC5Zb6ECp4/A==
 
 angular2-template-loader@^0.6.2:
   version "0.6.2"
@@ -7625,10 +7625,10 @@ sort-keys@^2.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.9.0:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
-  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
+sortablejs@^1.10.2:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.15.0.tgz#53230b8aa3502bb77a29e2005808ffdb4a5f7e2a"
+  integrity sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w==
 
 source-list-map@^2.0.0:
   version "2.0.1"
@@ -8256,6 +8256,11 @@ tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+
+tslib@^2.0.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tslint@~5.9.1:
   version "5.9.1"
